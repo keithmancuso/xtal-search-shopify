@@ -3,7 +3,7 @@
 client_id = "3224398620b6ad43b6bf9b9c267908b7"
 name = "xtal-search"
 handle = "xtal-search"
-application_url = "https://foul-patients-optional-humanity.trycloudflare.com"
+application_url = "https://mario-addition-lottery-fireplace.trycloudflare.com"
 embedded = true
 
 [build]
@@ -12,13 +12,13 @@ dev_store_url = "quickstart-dc84e1d9.myshopify.com"
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = ""
+scopes = "read_products, write_products"
 
 [auth]
 redirect_urls = [
-  "https://foul-patients-optional-humanity.trycloudflare.com/auth/callback",
-  "https://foul-patients-optional-humanity.trycloudflare.com/auth/shopify/callback",
-  "https://foul-patients-optional-humanity.trycloudflare.com/api/auth/callback"
+  "https://mario-addition-lottery-fireplace.trycloudflare.com/auth/callback",
+  "https://mario-addition-lottery-fireplace.trycloudflare.com/auth/shopify/callback",
+  "https://mario-addition-lottery-fireplace.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
