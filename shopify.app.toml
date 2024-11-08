@@ -3,7 +3,7 @@
 client_id = "3224398620b6ad43b6bf9b9c267908b7"
 name = "xtal-search"
 handle = "xtal-search"
-application_url = "https://mario-addition-lottery-fireplace.trycloudflare.com"
+application_url = "https://humanities-loading-return-bottle.trycloudflare.com"
 embedded = true
 
 [build]
@@ -12,29 +12,38 @@ dev_store_url = "quickstart-dc84e1d9.myshopify.com"
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "read_products, write_products"
+scopes = "read_products,write_products"
 
 [auth]
 redirect_urls = [
   "https://mario-addition-lottery-fireplace.trycloudflare.com/auth/callback",
   "https://mario-addition-lottery-fireplace.trycloudflare.com/auth/shopify/callback",
-  "https://mario-addition-lottery-fireplace.trycloudflare.com/api/auth/callback"
+  "https://mario-addition-lottery-fireplace.trycloudflare.com/api/auth/callback",
+  "https://collectible-ranger-zip-written.trycloudflare.com/auth/callback",
+  "https://collectible-ranger-zip-written.trycloudflare.com/auth/shopify/callback",
+  "https://collectible-ranger-zip-written.trycloudflare.com/api/auth/callback",
+  "https://victoria-observations-footwear-budapest.trycloudflare.com/auth/callback",
+  "https://victoria-observations-footwear-budapest.trycloudflare.com/auth/shopify/callback",
+  "https://victoria-observations-footwear-budapest.trycloudflare.com/api/auth/callback",
+  "https://humanities-loading-return-bottle.trycloudflare.com/auth/callback",
+  "https://humanities-loading-return-bottle.trycloudflare.com/auth/shopify/callback",
+  "https://humanities-loading-return-bottle.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
 api_version = "2024-10"
 
   [[webhooks.subscriptions]]
-  uri = "/webhooks/customers/data_request"
   compliance_topics = [ "customers/data_request" ]
+  uri = "/webhooks/customers/data_request"
 
   [[webhooks.subscriptions]]
-  uri = "/webhooks/customers/redact"
   compliance_topics = [ "customers/redact" ]
+  uri = "/webhooks/customers/redact"
 
   [[webhooks.subscriptions]]
-  uri = "/webhooks/shop/redact"
   compliance_topics = [ "shop/redact" ]
+  uri = "/webhooks/shop/redact"
 
   [[webhooks.subscriptions]]
   topics = [ "app/uninstalled" ]
