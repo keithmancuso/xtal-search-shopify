@@ -1,0 +1,19 @@
+[[extensions]]
+name = "xtal-search"
+handle = "xtal-search"
+type = "ui_extension"
+
+[[extensions.targeting]]
+target = "body"
+module = "./blocks/star_rating.liquid"
+
+[extensions.build]
+command = "cd react-src && npm run build"
+path = "assets"
+
+[extensions.capabilities]
+network_access = true
+
+[extensions.settings]
+fields = []
+
