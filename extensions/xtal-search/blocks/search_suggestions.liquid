@@ -1,0 +1,26 @@
+hello world
+{% assign search_terms = block.settings.product.metafields.demo.search_terms.value | split: ',' %}
+<div class="search-suggestions" style="color:{{ block.settings.text_colour }}">
+  {% if search_terms.size > 0 %}
+    <span class="suggestion-label">{{ 'search.suggestions.label' | t }}</span>
+    <ul class="suggestion-list">
+      {% for term in search_terms limit: block.settings.max_suggestions %}
+        <li class="suggestion-item">
+          <a href="/search?q={{ term | strip | url_encode }}">{{ term | strip }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Search Suggestions",
+  "target": "section",
+  "settings": [
+    { "type": "product", "id": "product", "label": "Product", "autofill": true },
+    { "type": "color", "id": "text_colour", "label": "Text Colour", "default": "#333333" },
+    { "type": "range", "id": "max_suggestions", "label": "Maximum Suggestions", "min": 1, "max": 10, "step": 1, "default": 5 }
+  ]
+}
+{% endschema %}

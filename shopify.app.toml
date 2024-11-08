@@ -3,7 +3,7 @@
 client_id = "3224398620b6ad43b6bf9b9c267908b7"
 name = "xtal-search"
 handle = "xtal-search"
-application_url = "https://humanities-loading-return-bottle.trycloudflare.com"
+application_url = "https://network-disclaimer-exist-its.trycloudflare.com"
 embedded = true
 
 [build]
@@ -27,7 +27,28 @@ redirect_urls = [
   "https://victoria-observations-footwear-budapest.trycloudflare.com/api/auth/callback",
   "https://humanities-loading-return-bottle.trycloudflare.com/auth/callback",
   "https://humanities-loading-return-bottle.trycloudflare.com/auth/shopify/callback",
-  "https://humanities-loading-return-bottle.trycloudflare.com/api/auth/callback"
+  "https://humanities-loading-return-bottle.trycloudflare.com/api/auth/callback",
+  "https://presents-trends-penalty-bibliographic.trycloudflare.com/auth/callback",
+  "https://presents-trends-penalty-bibliographic.trycloudflare.com/auth/shopify/callback",
+  "https://presents-trends-penalty-bibliographic.trycloudflare.com/api/auth/callback",
+  "https://welsh-routing-vertex-icon.trycloudflare.com/auth/callback",
+  "https://welsh-routing-vertex-icon.trycloudflare.com/auth/shopify/callback",
+  "https://welsh-routing-vertex-icon.trycloudflare.com/api/auth/callback",
+  "https://marble-employ-updates-movie.trycloudflare.com/auth/callback",
+  "https://marble-employ-updates-movie.trycloudflare.com/auth/shopify/callback",
+  "https://marble-employ-updates-movie.trycloudflare.com/api/auth/callback",
+  "https://recording-pollution-oral-karl.trycloudflare.com/auth/callback",
+  "https://recording-pollution-oral-karl.trycloudflare.com/auth/shopify/callback",
+  "https://recording-pollution-oral-karl.trycloudflare.com/api/auth/callback",
+  "https://children-mail-occupations-modified.trycloudflare.com/auth/callback",
+  "https://children-mail-occupations-modified.trycloudflare.com/auth/shopify/callback",
+  "https://children-mail-occupations-modified.trycloudflare.com/api/auth/callback",
+  "https://bone-sorry-suppose-choices.trycloudflare.com/auth/callback",
+  "https://bone-sorry-suppose-choices.trycloudflare.com/auth/shopify/callback",
+  "https://bone-sorry-suppose-choices.trycloudflare.com/api/auth/callback",
+  "https://network-disclaimer-exist-its.trycloudflare.com/auth/callback",
+  "https://network-disclaimer-exist-its.trycloudflare.com/auth/shopify/callback",
+  "https://network-disclaimer-exist-its.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
