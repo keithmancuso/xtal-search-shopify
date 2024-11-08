@@ -1,8 +1,13 @@
 hello world
+
+<div class="current-search">Current search: {{ search.terms }}</div>
+
+
 {% assign search_terms = block.settings.product.metafields.demo.search_terms.value | split: ',' %}
 <div class="search-suggestions" style="color:{{ block.settings.text_colour }}">
   {% if search_terms.size > 0 %}
     <span class="suggestion-label">{{ 'search.suggestions.label' | t }}</span>
+    
     <ul class="suggestion-list">
       {% for term in search_terms limit: block.settings.max_suggestions %}
         <li class="suggestion-item">
