@@ -1,31 +1,86 @@
-hello world
+hello world test test
 
 <div class="current-search">Current search: {{ search.terms }}</div>
 
+<main class="container">
+  <h1>Xtal Search</h1>
+  <div id="search-container">
+    <input type="text" id="search-input" placeholder="Search...">
+    <div id="aspects-container"></div>
+  </div>
+</main>
+<script>
+  // Initialize Xtal Search
+  new XtalSearch({
+    inputSelector: '#search-input',
+    aspectsContainerSelector: '#aspects-container',
+    apiEndpoint: 'https://odqrafx6cr2r3gcfyaf7dtdmleziiigr.vercel.app/api/aspects?query=winter&aspects=',
+  });
+</script>
 
-{% assign search_terms = block.settings.product.metafields.demo.search_terms.value | split: ',' %}
-<div class="search-suggestions" style="color:{{ block.settings.text_colour }}">
-  {% if search_terms.size > 0 %}
-    <span class="suggestion-label">{{ 'search.suggestions.label' | t }}</span>
-    
-    <ul class="suggestion-list">
-      {% for term in search_terms limit: block.settings.max_suggestions %}
-        <li class="suggestion-item">
-          <a href="/search?q={{ term | strip | url_encode }}">{{ term | strip }}</a>
-        </li>
-      {% endfor %}
-    </ul>
-  {% endif %}
-</div>
+<script>
+  class XtalSearch {
+    constructor(config) {
+      this.inputSelector = config.inputSelector;
+      this.aspectsContainerSelector = config.aspectsContainerSelector;
+      this.apiEndpoint = config.apiEndpoint;
 
-{% schema %}
-{
-  "name": "Search Suggestions",
-  "target": "section",
-  "settings": [
-    { "type": "product", "id": "product", "label": "Product", "autofill": true },
-    { "type": "color", "id": "text_colour", "label": "Text Colour", "default": "#333333" },
-    { "type": "range", "id": "max_suggestions", "label": "Maximum Suggestions", "min": 1, "max": 10, "step": 1, "default": 5 }
-  ]
-}
-{% endschema %}
+      this.inputElement = document.querySelector(this.inputSelector);
+      this.aspectsContainer = document.querySelector(this.aspectsContainerSelector);
+
+      this.debounceTimer = null;
+      this.debounceDelay = 300;
+
+      this.init();
+    }
+
+    init() {
+      this.inputElement.addEventListener('input', this.handleInput.bind(this));
+    }
+
+    handleInput(event) {
+      const query = event.target.value;
+      this.debounce(() => this.fetchAspects(query), this.debounceDelay);
+    }
+
+    debounce(func, delay) {
+      clearTimeout(this.debounceTimer);
+      this.debounceTimer = setTimeout(func, delay);
+    }
+
+    async fetchAspects(query) {
+      if (query.trim() === '') {
+        this.renderAspects([]);
+        return;
+      }
+
+      try {
+        const response = await fetch(`${this.apiEndpoint}?query=${encodeURIComponent(query)}&aspects=`);
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        this.renderAspects(data.aspects || []);
+      } catch (error) {
+        console.error('Error fetching aspects:', error);
+        this.renderAspects([]);
+      }
+    }
+
+    renderAspects(aspects) {
+      this.aspectsContainer.innerHTML = '';
+      aspects.forEach((aspect) => {
+        const button = document.createElement('button');
+        button.textContent = aspect;
+        button.className = 'aspect-button';
+        button.addEventListener('click', () => this.handleAspectClick(aspect));
+        this.aspectsContainer.appendChild(button);
+      });
+    }
+
+    handleAspectClick(aspect) {
+      console.log('Aspect clicked:', aspect);
+      // You can implement the logic for what happens when an aspect is clicked
+    }
+  }
+</script>
