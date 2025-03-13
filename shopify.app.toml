@@ -3,7 +3,7 @@
 client_id = "3224398620b6ad43b6bf9b9c267908b7"
 name = "xtal-search"
 handle = "xtal-search"
-application_url = "https://readers-bookmark-hanging-coding.trycloudflare.com"
+application_url = "https://thongs-sudan-parcel-glad.trycloudflare.com"
 embedded = true
 
 [build]
@@ -16,9 +16,9 @@ scopes = "read_products,write_products"
 
 [auth]
 redirect_urls = [
-  "https://readers-bookmark-hanging-coding.trycloudflare.com/auth/callback",
-  "https://readers-bookmark-hanging-coding.trycloudflare.com/auth/shopify/callback",
-  "https://readers-bookmark-hanging-coding.trycloudflare.com/api/auth/callback"
+  "https://thongs-sudan-parcel-glad.trycloudflare.com/auth/callback",
+  "https://thongs-sudan-parcel-glad.trycloudflare.com/auth/shopify/callback",
+  "https://thongs-sudan-parcel-glad.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
